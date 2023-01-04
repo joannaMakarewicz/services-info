@@ -11,8 +11,38 @@ html {
   box-sizing: inherit;
 }
 
+#root {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-width: 100vw;
+}
 
 .App {
-  display:flex;
+  column-gap: 3px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 16px;
+  row-gap: 3px;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.App-article {
+  border: 1px solid red;
+  display: grid;
+  padding: 6px;
+}
+
+.App-heading {
+  text-align: center;
+}
+
+.App-image {
+  margin: 0 auto;
+  width: 200px;
 }

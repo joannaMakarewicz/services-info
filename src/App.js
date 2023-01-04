@@ -9,25 +9,26 @@ const posts = [
   },
   {
     id: 2,
-    image: "./2.jpg",
+    image: "/services-info/2.jpg",
     title: "Wszyscy zazdroszą Polakom!",
     intro: "Takiego clickbajtowego tytułu jeszcze nikt nie wymyślił",
   },
   {
     id: 3,
-    image: "3.jpg",
+    image: "/services-info/3.jpg",
     title: "Adam Małysz zgolił wąs",
     intro:
       "Po przegranym zakładzie z Piotrem Żyłą nasz mistrz olimpijski zgolił wąsy",
   },
 ];
 
-function BlogTitle({image, title, intro}) {
+
+function BlogTitle({ image, title, intro }) {
   return (
-    <article>
-      <h2>{title}</h2>
-      <img src={image} alt="Mountain view"/>
-      <p>{intro}</p>
+    <article className="App-article">
+      <h2 className="App-header">{title}</h2>
+      <img className="App-image" src={image} alt="Mountain view" />
+      <p className="App-content">{intro}</p>
     </article>
   );
 }
@@ -35,12 +36,17 @@ function BlogTitle({image, title, intro}) {
 function App() {
   return (
     <>
-    <h1>Halooo</h1>
-    <section className="App">
-      {posts.map((elem, index) => (
-        <BlogTitle key={index} image={elem.image} title={elem.title} intro={elem.intro}  />
-      ))}
-    </section>
+      <h1 className="App-heading">Breaking news</h1>
+      <section className="App">
+        {posts.map((elem, index) => (
+          <BlogTitle
+            key={index}
+            image={elem.image}
+            title={elem.title}
+            intro={elem.intro}
+          />
+        ))}
+      </section>
     </>
   );
 }
