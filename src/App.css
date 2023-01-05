@@ -27,13 +27,10 @@ html {
   padding: 16px;
   row-gap: 3px;
   text-align: center;
-  @media screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .App-article {
-  border: 1px solid red;
+  border: 1px solid #333;
   display: grid;
   padding: 6px;
 }
@@ -45,4 +42,11 @@ html {
 .App-image {
   margin: 0 auto;
   width: 200px;
+}
+
+@media screen and (max-width:768px){
+
+  .App {
+    grid-template-columns: 1fr;
+  }
 }
